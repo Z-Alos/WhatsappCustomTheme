@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Whatsapp Custom Theme",
+    "description": "Whatsapp Custom Theme",
+    "version": "1.0.0",
+    "permissions": ["scripting", "activeTab"],
+    "host_permissions": ["https://www.youtube.com/*"],
+  
+    "background": {
+      "service_worker": "background.js"
+    },
+  
+    "action": {
+      "default_popup": "whatsapp_custom_theme.html",
+      "default_icon": "logo.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["https://web.whatsapp.com/*"],
+        "js": [
+          "content.js"
+        ],
+        "css": ["style.css"]
+      }
+    ],
+  
+    "icons": {
+      "128": "logo.png"
+    }
+  }
