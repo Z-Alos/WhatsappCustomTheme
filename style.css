@@ -1,16 +1,30 @@
 :root{
-    --msg-out: rgb(85, 0, 0);
-    --msg-out-rgb: 85, 0, 0;
-    --msg-in: rgb(255, 197, 211);
-    --msg-in-rgb: 255, 197, 211;
-    --bars: rgb(245, 210, 228);
+    --msg-in: rgb(163, 144, 231);
+    --msg-in-rgb: 163, 144, 231;
+    --msg-out: rgb(124, 37, 80);
+    --msg-out-rgb: 128, 0, 64;
+    --bars: rgb(245, 215, 204);
     --some-more-bars: rgb(245, 232, 245); 
-    --peach-cream: #FFF0DB;
+    --side-pane: #ffc5d3;
 }
 
+/* message-out */
+.message-out ._amk6._amlo{
+    background-color: var(--msg-out);
+    color: white;
+}
+
+/* message-out insider */
 .message-out ._aju8{
     background-color: rgba(var(--msg-out-rgb), 0.8) !important;
+    color: white !important;
 }
+
+
+.message-in ._amk6._amlo{
+    background-color: var(--msg-in);
+}
+
 
 /* message little tail */
 .message-in  ._amk7{
@@ -37,22 +51,53 @@
 
 
 /* special message out*/
-.message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x.xjcl138{
-    background-color: var(--msg-out) !important;
-    border-radius: 7px 0 7px 0 7px !important;
+
+.message-in .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
+    background-color: var(--msg-in);
+    border-radius: 0 7px 7px 7px;
+    color: black;
 }
-.message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x.xjcl138 .x1c4vz4f.xs83m0k.xdl72j9.x1g77sc7 {
+.message-out .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
+    background-color: var(--msg-out);
+    border-radius: 7px 0 7px 7px;
+    color: white;
+}
+
+.message-out .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4 span{
+    color: whitesmoke;
+}
+
+/* documents out */
+
+.message-out ._amk6._amlo .x10wlt62.x1hl2dhg.xh8yej3.x1k6n2fr{
+    background-color: rgba(var(--msg-out-rgb), 0.8) !important;
+}
+
+.message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x.xjcl138 .x168nmei.x13lgxp2.x1k6n2fr.xmper1u{
     background-color: rgba(var(--msg-out-rgb), 0.8) !important;
     border-radius: 7px 0 7px 0 7px !important;
 }
 
-/* special message in  */
-.message-in ._amk6._amlo .x9f619.xlkrthq.xyqdw3p.x10ogl3i{
-    background-color: var(--msg-in) !important;
-    border-radius: 0 7px 7px 0 7px !important;
+.message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x span{
+    color: white;
 }
-.message-out ._amk6._amlo .x9f619 .xyqdw3p.x10ogl3i.xg8j3zb.x1k2j06m.x1n2onr6.x1vjfegm.xf58f5l{
-    background-color: var(--msg-out) !important;
+
+/* links out */
+.message-out ._amk6._amlo a{
+    /* color: rgb(173, 255, 248); */
+    color: rgb(230, 125, 216);
+}
+.message-out ._amk6._amlo .x6ikm8r.x10wlt62.xnhwuio.x1k6n2fr{
+    background-color: rgba(var(--msg-in-rgb), 0.8) !important;
+}
+/* special message in  */
+/* Reply */
+.message-in ._aju8{
+    background-color: rgba(var(--msg-in-rgb), 0.6) !important;
+    color: white !important;
+}
+.message-in ._amk6._amlo .x9f619.x1o095ql.x1u9i22x.xjcl138 .x168nmei.x13lgxp2.x1k6n2fr.xmper1u{
+    background-color: var(--msg-in) !important;
     border-radius: 0 7px 7px 0 7px !important;
 }
 
@@ -73,23 +118,7 @@
     background: var(--some-more-bars);
 }
 
-.message-in .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
-    background-color: var(--msg-in);
-    border-radius: 0 7px 7px 7px;
-    color: black;
-}
-.message-out .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
-    background-color: var(--msg-out);
-    border-radius: 7px 0 7px 7px;
-    color: white;
-}
 
-.message-out ._amk6._amlo{
-    background-color: var(--msg-out);
-}
-.message-in ._amk6._amlo{
-    background-color: var(--msg-in);
-}
 
 /* Pane Side */
 
@@ -99,9 +128,16 @@
 #side ._aoq2._ai01,
 #pane-side
 {
-    background-color: var(--peach-cream);
+    background-color: var(--side-pane);
 }
 
 ._ak72.false._ak73 ._ak81{
     border-top: 2px solid black !important;
+}
+
+#all-filter,
+#unread-filter,
+#favorites-filter,
+#group-filter{
+    background-color: var(--some-more-bars);
 }
