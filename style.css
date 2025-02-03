@@ -220,9 +220,15 @@
 .message-in .x9f619.x1hx0egp.x1yrsyyn.x1sxyh0{
     color: var(--msg-in-text) !important;
 }
+.message-out .x9f619.x1hx0egp.x1yrsyyn.x1sxyh0{
+    color: var(--msg-out-text) !important;
+}
 /* Sender's Name::Text */
 .message-in .x9f619.x1hx0egp.x1yrsyyn.x1sxyh0 span{
     color: var(--msg-in-text) !important;
+}
+.message-out .x9f619.x1hx0egp.x1yrsyyn.x1sxyh0 span{
+    color: var(--msg-out-text) !important;
 }
 
 /* Reply::Text */
