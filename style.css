@@ -6,6 +6,9 @@
     --bars: rgb(222, 243, 201);
     --some-more-bars: rgb(195, 180, 238);
     --side-pane: rgb(230, 197, 236);
+
+    --side-pane-primary-text: rgb(190, 152, 152);
+    --side-pane-secondary-text: rgb(68, 240, 15);
     
     --msg-in-text: rgb(255, 255, 255);
     --msg-out-text: rgb(0, 0, 0);
@@ -116,6 +119,11 @@
 /*---Special Inner---*/
 
 /* Documents Inner */
+/* message-in */
+.message-in ._amk6._amlo .x9f619.x1o095ql.x1u9i22x.xjcl138 .x168nmei.x13lgxp2.x1k6n2fr.xmper1u{
+    background-color: var(--msg-in-inner);
+    border-radius: 7px 0 7px 0 7px !important;
+}
 /* message-out */
 .message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x.xjcl138 .x168nmei.x13lgxp2.x1k6n2fr.xmper1u{
     background-color: var(--msg-out-inner);
@@ -123,9 +131,12 @@
 }
 
 /* Documents With Caption */
-.message-out ._amk6._amlo .x10wlt62.x1hl2dhg.xh8yej3.x1k6n2fr{
-    background-color: var(--msg-out-inner);
+/* message-in */
+.message-in ._amk6._amlo .x1c4vz4f.xs83m0k.xdl72j9.x1g77sc7{
+    background-color: var(--msg-in-inner);
 }
+
+/* Group Document Inner */
 
 /* Link Inner */
 /* message-in */
@@ -140,6 +151,53 @@
 
 /*---Texts---*/
 
+/* Pane Side::Primary Text */
+
+/* Page Heading For Ex:- (Chats) */
+/* Names */
+.x1qlqyl8.x1pd3egz.xcgk4ki,
+#pane-side ._ak8q {
+    color: var(--side-pane-primary-text) !important;
+}
+
+/* Secondary Text */
+/* Message Preview */
+/* Timestamp */
+#pane-side ._ak8k,
+#pane-side ._ak8i{
+    color: var(--side-pane-secondary-text) !important;
+} 
+
+/* Header::Side Pane */
+.x78zum5.x6s0dn4.x1afcbsf.x6s6g2w{
+    color: var(--side-pane-secondary-text);
+}
+
+/* Search Bar::Side Pane */
+/* Search PlaceHolder */
+/* Search Text */
+#side ._ai04 span,
+._aoq2 ._ah_-,
+.lexical-rich-text-input
+{
+    color: var(--side-pane-secondary-text) !important;
+}
+
+#all-filter,
+#unread-filter,
+#favorites-filter,
+#group-filter{
+    color: var(--side-pane-secondary-text) !important;
+}
+
+/* footer */
+#pane-side .x1pg5gke.x1fcty0u.xvq8zen.xeaf4i8,
+#pane-side .x1pg5gke.x1fcty0u.xvq8zen.xeaf4i8 *
+{
+    color: var(--side-pane-secondary-text) !important;
+}
+
+
 /* Simple Message::Text*/
 /* message-in */
 .message-in .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
@@ -150,6 +208,11 @@
     color: var(--msg-out-text) !important;
 }
 
+/* Group Message In::Text */
+.message-in .x9f619.x1hx0egp.x1yrsyyn.x1sxyh0{
+    color: var(--msg-in-text) !important;
+}
+
 /* Reply::Text */
 .message-in ._aju8 span{
     color: var(--msg-in-text) !important;
@@ -158,6 +221,10 @@
 /* Document::Text */
 /* message-in::Text::Timestamp */
 .message-in ._amk6._amlo .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4 span{
+    color: var(--msg-in-text) !important;
+}
+/* Group::Document */
+.message-in ._amk6._amlo .x9f619.x1o095ql.x1u9i22x span{
     color: var(--msg-in-text) !important;
 }
 .message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x span{

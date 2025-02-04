@@ -29,6 +29,8 @@ chrome.runtime.onMessage.addListener((message) => {
             msgInInner: rootStyles.getPropertyValue("--msg-in-inner").trim(),
             msgOutInner: rootStyles.getPropertyValue("--msg-out-inner").trim(),
             msgInText: rootStyles.getPropertyValue("--msg-in-text").trim(),
+            sidePanePrimaryText: rootStyles.getPropertyValue("--side-pane-primary-text").trim(),
+            sidePaneSecondaryText: rootStyles.getPropertyValue("--side-pane-secondary-text").trim(),
             msgOutText: rootStyles.getPropertyValue("--msg-out-text").trim(),
             msgInLink: rootStyles.getPropertyValue("--msg-in-link").trim(),
             msgOutLink: rootStyles.getPropertyValue("--msg-out-link").trim()
@@ -48,6 +50,8 @@ function setTheme(retrievedPreset){
     target.setProperty('--some-more-bars', retrievedPreset.someMoreBars);
     target.setProperty('--msg-in-inner', retrievedPreset.msgInInner);
     target.setProperty('--msg-out-inner', retrievedPreset.msgOutInner);
+    target.setProperty('--side-pane-primary-text', retrievedPreset.sidePanePrimaryText);
+    target.setProperty('--side-pane-secondary-text', retrievedPreset.sidePaneSecondaryText);
     target.setProperty('--msg-in-text', retrievedPreset.msgInText);
     target.setProperty('--msg-out-text', retrievedPreset.msgOutText);
     target.setProperty('--msg-in-link', retrievedPreset.msgInLink);

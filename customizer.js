@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const someMoreBars = document.getElementById("custom-some-more-bars");
     const msgInInner = document.getElementById("custom-msg-in-inner");
     const msgOutInner = document.getElementById("custom-msg-out-inner");
+    
+    const sidePanePrimaryText = document.getElementById("custom-side-pane-primary-text");
+    const sidePaneSecondaryText = document.getElementById("custom-side-pane-secondary-text");
 
 
     const msgInText = document.getElementById("custom-msg-in-text");
@@ -16,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const msgOutLink = document.getElementById("custom-msg-out-link");
 
     const selectors = [sidePane, msgIn, msgOut, bars, someMoreBars,
-                       msgInInner, msgOutInner, msgInText, msgOutText,
+                       msgInInner, msgOutInner, sidePanePrimaryText,
+                       sidePaneSecondaryText, msgInText, msgOutText,
                        msgInLink, msgOutLink]   
     selectors.forEach(element => {
         element.addEventListener('input',() => displayColorChange(`--${element.name}`, element.value));
