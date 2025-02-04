@@ -7,8 +7,8 @@
     --some-more-bars: rgb(195, 180, 238);
     --side-pane: rgb(230, 197, 236);
 
-    --side-pane-primary-text: rgb(190, 152, 152);
-    --side-pane-secondary-text: rgb(68, 240, 15);
+    --side-pane-primary-text: rgb(0, 0, 0);
+    --side-pane-secondary-text: rgb(110, 110, 110);
     
     --msg-in-text: rgb(255, 255, 255);
     --msg-out-text: rgb(0, 0, 0);
