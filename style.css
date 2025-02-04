@@ -137,6 +137,7 @@
     border-radius: 7px 0 7px 0 7px !important;
 }
 
+
 /* Documents With Caption */
 /* message-in */
 .message-in ._amk6._amlo .x1c4vz4f.xs83m0k.xdl72j9.x1g77sc7{
@@ -219,6 +220,10 @@
 .message-in .x9f619.x1hx0egp.x1yrsyyn.x1sxyh0{
     color: var(--msg-in-text) !important;
 }
+/* Sender's Name::Text */
+.message-in .x9f619.x1hx0egp.x1yrsyyn.x1sxyh0 span{
+    color: var(--msg-in-text) !important;
+}
 
 /* Reply::Text */
 .message-in ._aju8 span{
@@ -236,6 +241,12 @@
 }
 .message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x span{
     color: var(--msg-out-text) !important;
+}
+
+/* Broadcast::Document */
+/* message-in */
+.message-in ._amk6._amlo .x9f619.xyqdw3p.x10ogl3i.xg8j3zb{
+    color: var(--msg-in-text) !important;
 }
 
 /* Link Inner::Text */
