@@ -14,10 +14,17 @@
     --msg-out-text: rgb(0, 0, 0);
     --msg-in-link: rgb(130, 196, 159);
     --msg-out-link: rgb(227, 148, 59);
+
+    --chat-background: peachpuff;
     
 }
 
 /* ---------------------------------------------- */
+
+/* Chat Background */
+[data-asset-chat-background-dark]{
+    background-color: var(--chat-background) !important;
+}
 
 /* BARS: Chahiye Yaar And Some Bars:: 36 - Raftaar */
 .xa1v5g2.x1n2onr6.x9f619.x78zum5,

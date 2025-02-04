@@ -17,11 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const msgOutText = document.getElementById("custom-msg-out-text");
     const msgInLink = document.getElementById("custom-msg-in-link");
     const msgOutLink = document.getElementById("custom-msg-out-link");
+    
+    const chatBackground = document.getElementById("custom-chat-background");
 
     const selectors = [sidePane, msgIn, msgOut, bars, someMoreBars,
                        msgInInner, msgOutInner, sidePanePrimaryText,
                        sidePaneSecondaryText, msgInText, msgOutText,
-                       msgInLink, msgOutLink]   
+                       msgInLink, msgOutLink, chatBackground]   
     selectors.forEach(element => {
         element.addEventListener('input',() => displayColorChange(`--${element.name}`, element.value));
     });

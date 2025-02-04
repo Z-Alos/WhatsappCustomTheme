@@ -33,7 +33,8 @@ chrome.runtime.onMessage.addListener((message) => {
             sidePaneSecondaryText: rootStyles.getPropertyValue("--side-pane-secondary-text").trim(),
             msgOutText: rootStyles.getPropertyValue("--msg-out-text").trim(),
             msgInLink: rootStyles.getPropertyValue("--msg-in-link").trim(),
-            msgOutLink: rootStyles.getPropertyValue("--msg-out-link").trim()
+            msgOutLink: rootStyles.getPropertyValue("--msg-out-link").trim(),
+            chatBackground: rootStyles.getPropertyValue("--chat-background").trim()
         }
 
         console.log("Saving Changes...")
@@ -56,4 +57,5 @@ function setTheme(retrievedPreset){
     target.setProperty('--msg-out-text', retrievedPreset.msgOutText);
     target.setProperty('--msg-in-link', retrievedPreset.msgInLink);
     target.setProperty('--msg-out-link', retrievedPreset.msgOutLink);
+    target.setProperty('--chat-background', retrievedPreset.chatBackground);
 }
