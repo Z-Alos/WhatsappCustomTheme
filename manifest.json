@@ -4,7 +4,7 @@
     "description": "Whatsapp Custom Theme",
     "version": "1.0.0",
     "permissions": ["scripting", "activeTab"],
-    "host_permissions": ["https://www.youtube.com/*"],
+    "host_permissions": ["https://web.whatsapp.com/*"],
   
     "background": {
       "service_worker": "background.js"
