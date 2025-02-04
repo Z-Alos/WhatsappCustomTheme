@@ -3,7 +3,6 @@ console.log("nani..??")
 const LOCALSTORAGEPREFIX = "WHATSAPP_CUSTOM_THEME_";
 try {
     const retrievedPreset = JSON.parse(localStorage.getItem(`${LOCALSTORAGEPREFIX}PRESET`))
-    console.log(retrievedPreset);
     if(retrievedPreset) setTheme(retrievedPreset)
 } catch (error) {
     console.log(error)
@@ -26,7 +25,13 @@ chrome.runtime.onMessage.addListener((message) => {
             msgIn: rootStyles.getPropertyValue("--msg-in").trim(),
             msgOut: rootStyles.getPropertyValue("--msg-out").trim(),
             bars: rootStyles.getPropertyValue("--bars").trim(),
-            someMoreBars: rootStyles.getPropertyValue("--some-more-bars").trim()
+            someMoreBars: rootStyles.getPropertyValue("--some-more-bars").trim(),
+            msgInInner: rootStyles.getPropertyValue("--msg-in-inner").trim(),
+            msgOutInner: rootStyles.getPropertyValue("--msg-out-inner").trim(),
+            msgInText: rootStyles.getPropertyValue("--msg-in-text").trim(),
+            msgOutText: rootStyles.getPropertyValue("--msg-out-text").trim(),
+            msgInLink: rootStyles.getPropertyValue("--msg-in-link").trim(),
+            msgOutLink: rootStyles.getPropertyValue("--msg-out-link").trim()
         }
 
         console.log("Saving Changes...")
@@ -41,4 +46,10 @@ function setTheme(retrievedPreset){
     target.setProperty('--msg-out', retrievedPreset.msgOut);
     target.setProperty('--bars', retrievedPreset.bars);
     target.setProperty('--some-more-bars', retrievedPreset.someMoreBars);
+    target.setProperty('--msg-in-inner', retrievedPreset.msgInInner);
+    target.setProperty('--msg-out-inner', retrievedPreset.msgOutInner);
+    target.setProperty('--msg-in-text', retrievedPreset.msgInText);
+    target.setProperty('--msg-out-text', retrievedPreset.msgOutText);
+    target.setProperty('--msg-in-link', retrievedPreset.msgInLink);
+    target.setProperty('--msg-out-link', retrievedPreset.msgOutLink);
 }

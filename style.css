@@ -1,123 +1,49 @@
 :root{
-    --msg-in: rgb(163, 144, 231);
-    --msg-in-rgb: 163, 144, 231;
-    --msg-out: rgb(124, 37, 80);
-    --msg-out-rgb: 128, 0, 64;
-    --bars: rgb(245, 215, 204);
-    --some-more-bars: rgb(245, 232, 245); 
-    --side-pane: #ffc5d3;
+    --msg-in: rgb(142, 107, 107);
+    --msg-out: rgb(219, 192, 173);
+    --msg-in-inner: rgb(180, 142, 142);
+    --msg-out-inner: rgb(188, 197, 155);
+    --bars: rgb(222, 243, 201);
+    --some-more-bars: rgb(195, 180, 238);
+    --side-pane: rgb(230, 197, 236);
+    
+    --msg-in-text: rgb(255, 255, 255);
+    --msg-out-text: rgb(0, 0, 0);
+    --msg-in-link: rgb(130, 196, 159);
+    --msg-out-link: rgb(227, 148, 59);
+    
 }
 
-/* message-out */
-.message-out ._amk6._amlo{
-    background-color: var(--msg-out);
-    color: white;
-}
+/* ---------------------------------------------- */
 
-/* message-out insider */
-.message-out ._aju8{
-    background-color: rgba(var(--msg-out-rgb), 0.8) !important;
-    color: white !important;
-}
-
-
-.message-in ._amk6._amlo{
-    background-color: var(--msg-in);
-}
-
-
-/* message little tail */
-.message-in  ._amk7{
-    color: var(--msg-in) !important;
-}
-
-.message-out ._amk7
-{
-    color: var(--msg-out) !important;
-}
-
-/* message hover */
-.x1ii9tc1{
-   background: radial-gradient(at top right,
-   rgba(var(--msg-in-rgb)) 60%,
-   rgba(0,0,0,0) 80%) !important;
-}
-
-.xa11xnq {
-    background: radial-gradient(circle at top right,
-    rgba(var(--msg-out-rgb)) 40%,
-    rgba(0, 0, 0, 0) 80%) !important;
-}
-
-
-/* special message out*/
-
-.message-in .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
-    background-color: var(--msg-in);
-    border-radius: 0 7px 7px 7px;
-    color: black;
-}
-.message-out .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
-    background-color: var(--msg-out);
-    border-radius: 7px 0 7px 7px;
-    color: white;
-}
-
-.message-out .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4 span{
-    color: whitesmoke;
-}
-
-/* documents out */
-
-.message-out ._amk6._amlo .x10wlt62.x1hl2dhg.xh8yej3.x1k6n2fr{
-    background-color: rgba(var(--msg-out-rgb), 0.8) !important;
-}
-
-.message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x.xjcl138 .x168nmei.x13lgxp2.x1k6n2fr.xmper1u{
-    background-color: rgba(var(--msg-out-rgb), 0.8) !important;
-    border-radius: 7px 0 7px 0 7px !important;
-}
-
-.message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x span{
-    color: white;
-}
-
-/* links out */
-.message-out ._amk6._amlo a{
-    /* color: rgb(173, 255, 248); */
-    color: rgb(230, 125, 216);
-}
-.message-out ._amk6._amlo .x6ikm8r.x10wlt62.xnhwuio.x1k6n2fr{
-    background-color: rgba(var(--msg-in-rgb), 0.8) !important;
-}
-/* special message in  */
-/* Reply */
-.message-in ._aju8{
-    background-color: rgba(var(--msg-in-rgb), 0.6) !important;
-    color: white !important;
-}
-.message-in ._amk6._amlo .x9f619.x1o095ql.x1u9i22x.xjcl138 .x168nmei.x13lgxp2.x1k6n2fr.xmper1u{
-    background-color: var(--msg-in) !important;
-    border-radius: 0 7px 7px 0 7px !important;
-}
-
-/* Chahiye Yaar And Some BARS */
+/* BARS: Chahiye Yaar And Some Bars:: 36 - Raftaar */
 .xa1v5g2.x1n2onr6.x9f619.x78zum5,
 .x1n2onr6.xfo81ep.x9f619.x78zum5,
 .x1n2onr6.xhtitgo.x9f619.x78zum5
 {
-    background-color: var(--bars);
+    background-color: var(--bars) !important;
 }
 
-/* Some more BARS */
+/*---Some More BARS---*/
+
 .x9f619.x78zum5.x6s0dn4.x1s1d1n7,
 .x9f619.x12lumcd.x1qrby5j.xeuugli,
 .xu06os2,
 ._ak72.false._ak73._ak7p
 {
-    background: var(--some-more-bars);
+    background: var(--some-more-bars) !important;
 }
 
+/* Side Pane::Filter */
+#all-filter,
+#unread-filter,
+#favorites-filter,
+#group-filter{
+    background-color: var(--some-more-bars) !important;
+}
+
+
+/* ----------------------------------------------- */
 
 
 /* Pane Side */
@@ -128,16 +54,126 @@
 #side ._aoq2._ai01,
 #pane-side
 {
-    background-color: var(--side-pane);
+    background-color: var(--side-pane) !important;
 }
 
-._ak72.false._ak73 ._ak81{
-    border-top: 2px solid black !important;
+
+/* ------------------------------------------------ */
+
+
+/*---Message: Background---*/
+
+/* message-in */
+.message-in ._amk6._amlo{
+    background-color: var(--msg-in);
 }
 
-#all-filter,
-#unread-filter,
-#favorites-filter,
-#group-filter{
-    background-color: var(--some-more-bars);
+/* message-out */
+.message-out ._amk6._amlo{
+    background-color: var(--msg-out);
+    /* color: white; */
+}
+
+
+/*---Border-Radius---*/
+
+/* message-in */
+.message-in .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
+    border-radius: 0 7px 7px 7px;
+}
+/* message-out */
+.message-out .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
+    border-radius: 7px 0 7px 7px;
+}
+
+
+/*---Message: Little Tail---*/
+
+/* message-in */
+.message-in  ._amk7{
+    color: var(--msg-in) !important;
+}
+/* message-out */
+.message-out ._amk7{
+    color: var(--msg-out) !important;
+}
+
+
+/*---Message: Inner---*/
+
+/* Reply */
+/* message-in */
+.message-in ._aju8{
+    background-color: var(--msg-in-inner);
+}
+
+/* message-out*/
+.message-out ._aju8{
+    background-color: var(--msg-out-inner);
+}
+
+
+/*---Special Inner---*/
+
+/* Documents Inner */
+/* message-out */
+.message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x.xjcl138 .x168nmei.x13lgxp2.x1k6n2fr.xmper1u{
+    background-color: var(--msg-out-inner);
+    border-radius: 7px 0 7px 0 7px !important;
+}
+
+/* Documents With Caption */
+.message-out ._amk6._amlo .x10wlt62.x1hl2dhg.xh8yej3.x1k6n2fr{
+    background-color: var(--msg-out-inner);
+}
+
+/* Link Inner */
+/* message-in */
+.message-in ._amk6._amlo .x6ikm8r.x10wlt62.xnhwuio.x1k6n2fr{
+    background-color: var(--msg-out-inner);
+}
+/* message-out */
+.message-out ._amk6._amlo .x6ikm8r.x10wlt62.xnhwuio.x1k6n2fr{
+    background-color: var(--msg-out-inner);
+}
+
+
+/*---Texts---*/
+
+/* Simple Message::Text*/
+/* message-in */
+.message-in .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
+    color: var(--msg-in-text) !important;
+}
+/* message-out */
+.message-out .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
+    color: var(--msg-out-text) !important;
+}
+
+/* Reply::Text */
+.message-in ._aju8 span{
+    color: var(--msg-in-text) !important;
+}
+
+/* Document::Text */
+/* message-in::Text::Timestamp */
+.message-in ._amk6._amlo .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4 span{
+    color: var(--msg-in-text) !important;
+}
+.message-out ._amk6._amlo .x9f619.x1o095ql.x1u9i22x span{
+    color: var(--msg-out-text) !important;
+}
+
+/* Link Inner::Text */
+.message-out .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4 span{
+    color: var(--msg-out-text) !important;
+}
+
+/* Link::Text*/
+
+.message-in ._amk6._amlo a{
+    color: var(--msg-in-link);
+}
+.message-out ._amk6._amlo a{
+    color: var(--msg-out-link);
 }
