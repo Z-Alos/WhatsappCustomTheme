@@ -69,17 +69,60 @@
                 <span class="title">Msg Out Link</span>
                 <input type="color" class="color-picker" id="custom-msg-out-link" name="msg-out-link">
             </div>
+            <div class="selector">
+                <span class="title">App Border Radius</span>
+                <input type="range" min="0" max="50" class="range" id="app-border-radius" name="app-border-radius">
+            </div>
         </div>
         <div id="element-chat-background">
+            <hr>
             <h2>Background</h2>
+
+            <h3>Main Background</h3>
+            <div class="selector">
+                <span class="title">Background Image</span>
+                <input type="file" class="background-image-selector" id="main-background-input">
+            </div>
+            <div class="selector">
+                <span class="title">Opacity</span>
+                <input type="range" class="range" id="main-background-opacity" name="main-background-opacity">
+            </div>
+            <div class="selector">
+                <span class="title">Overlay Color</span>
+                <input type="color" class="color-picker" id="main-background-overlay-color" name="main-background-overlay-color">
+            </div>
+            <div class="selector">
+                <span class="title">Overlay Opacity</span>
+                <input type="range" class="range" id="main-background-overlay-opacity" name="main-background-overlay-opacity">
+            </div>
+            
+            <h3>Chat Background</h3>
+            
+            <div class="selector">
+                <span class="title">Background Image</span>
+                <input type="file" class="background-image-selector" id="chat-background-input">
+            </div>
+            <div class="selector">
+                <span class="title">Opacity</span>
+                <input type="range" class="range" id="chat-background-opacity" name="chat-background-opacity">
+            </div>
+            <div class="selector">
+                <span class="title">Overlay Color</span>
+                <input type="color" class="color-picker" id="chat-background-overlay-color" name="chat-background-overlay-color">
+            </div>
+            <div class="selector">
+                <span class="title">Overlay Opacity</span>
+                <input type="range" class="range" id="chat-background-overlay-opacity" name="chat-background-overlay-opacity">
+            </div>
             <div class="selector">
                 <span class="title">Chat Background</span>
                 <input type="color" class="color-picker" id="custom-chat-background" name="chat-background">
             </div>
-        </div>
+
         <div class="apply-changes">
             <button id="apply-btn">Apply</button>
         </div>
+
     </div>
 </body>
 </html>

@@ -1,12 +1,41 @@
 console.log("nani..??")
 
 const LOCALSTORAGEPREFIX = "WHATSAPP_CUSTOM_THEME_";
+const cssVar = {
+    sidePane: "--side-pane",
+    msgIn: "--msg-in",
+    msgOut: "--msg-out",
+    bars: "--bars",
+    someMoreBars: "--some-more-bars",
+    msgInInner: "--msg-in-inner",
+    msgOutInner: "--msg-out-inner",
+    msgInText: "--msg-in-text",
+    sidePanePrimaryText: "--side-pane-primary-text",
+    sidePaneSecondaryText: "--side-pane-secondary-text",
+    msgOutText: "--msg-out-text",
+    msgInLink: "--msg-in-link",
+    msgOutLink: "--msg-out-link",
+    appBorderRadius: "--app-border-radius",
+    mainBackgroundOpacity: "--main-background-opacity",
+    mainBackgroundOverlayColor: "--main-background-overlay-color",
+    mainBackgroundOverlayOpacity: "--main-background-overlay-opacity",
+    chatBackgroundOpacity: "--chat-background-opacity",
+    chatBackgroundOverlayColor: "--chat-background-overlay-color",
+    chatBackgroundOverlayOpacity: "--chat-background-overlay-opacity",
+    chatBackground: "--chat-background"
+}
+
+//retrieve preset::local storage
 try {
     const retrievedPreset = JSON.parse(localStorage.getItem(`${LOCALSTORAGEPREFIX}PRESET`))
     if(retrievedPreset) setTheme(retrievedPreset)
 } catch (error) {
     console.log(error)
 }
+
+setMainBackgroundImage();
+setChatBackgroundImage();
+
 
 chrome.runtime.onMessage.addListener((message) => {
     if (message.color) {
@@ -18,44 +47,61 @@ chrome.runtime.onMessage.addListener((message) => {
       document.documentElement.style.setProperty(`${message.varName}`, `rgb(${r}, ${g}, ${b})`);
     }
 
-    if(message.apply){
-        const rootStyles = getComputedStyle(document.documentElement);
-        const preset = {
-            sidePane: rootStyles.getPropertyValue("--side-pane").trim(),
-            msgIn: rootStyles.getPropertyValue("--msg-in").trim(),
-            msgOut: rootStyles.getPropertyValue("--msg-out").trim(),
-            bars: rootStyles.getPropertyValue("--bars").trim(),
-            someMoreBars: rootStyles.getPropertyValue("--some-more-bars").trim(),
-            msgInInner: rootStyles.getPropertyValue("--msg-in-inner").trim(),
-            msgOutInner: rootStyles.getPropertyValue("--msg-out-inner").trim(),
-            msgInText: rootStyles.getPropertyValue("--msg-in-text").trim(),
-            sidePanePrimaryText: rootStyles.getPropertyValue("--side-pane-primary-text").trim(),
-            sidePaneSecondaryText: rootStyles.getPropertyValue("--side-pane-secondary-text").trim(),
-            msgOutText: rootStyles.getPropertyValue("--msg-out-text").trim(),
-            msgInLink: rootStyles.getPropertyValue("--msg-in-link").trim(),
-            msgOutLink: rootStyles.getPropertyValue("--msg-out-link").trim(),
-            chatBackground: rootStyles.getPropertyValue("--chat-background").trim()
-        }
+    if(message.opacity){
+      document.documentElement.style.setProperty(`${message.opacityVarName}`, message.opacity);
+    }
 
-        console.log("Saving Changes...")
-        localStorage.setItem(`${LOCALSTORAGEPREFIX}PRESET`, JSON.stringify(preset));
+    if(message.borderRadius){
+      document.documentElement.style.setProperty(`${message.borderVarName}`, `${message.borderRadius}px`);
+    }
+
+    if(message.apply){
+        applyPreset();
+    }
+
+    if(message.setMainBackgroundImage){
+        chrome.storage.local.set({mainBackgroundImage: message.setMainBackgroundImage},()=>{
+            setMainBackgroundImage();
+        })
+    }
+
+    if(message.setChatBackgroundImage){
+        chrome.storage.local.set({chatBackgroundImage: message.setChatBackgroundImage},()=>{
+            setChatBackgroundImage();
+        })
     }
 });
 
 function setTheme(retrievedPreset){
     const target = document.documentElement.style;
-    target.setProperty('--side-pane', retrievedPreset.sidePane);
-    target.setProperty('--msg-in', retrievedPreset.msgIn);
-    target.setProperty('--msg-out', retrievedPreset.msgOut);
-    target.setProperty('--bars', retrievedPreset.bars);
-    target.setProperty('--some-more-bars', retrievedPreset.someMoreBars);
-    target.setProperty('--msg-in-inner', retrievedPreset.msgInInner);
-    target.setProperty('--msg-out-inner', retrievedPreset.msgOutInner);
-    target.setProperty('--side-pane-primary-text', retrievedPreset.sidePanePrimaryText);
-    target.setProperty('--side-pane-secondary-text', retrievedPreset.sidePaneSecondaryText);
-    target.setProperty('--msg-in-text', retrievedPreset.msgInText);
-    target.setProperty('--msg-out-text', retrievedPreset.msgOutText);
-    target.setProperty('--msg-in-link', retrievedPreset.msgInLink);
-    target.setProperty('--msg-out-link', retrievedPreset.msgOutLink);
-    target.setProperty('--chat-background', retrievedPreset.chatBackground);
+    Object.keys(cssVar).forEach(key => {
+        target.setProperty(cssVar[key], retrievedPreset[key]);
+    })
+}
+
+function applyPreset(){
+    const preset = {};
+    const rootStyles = getComputedStyle(document.documentElement);
+
+    Object.keys(cssVar).forEach(key => {
+        preset[key] = rootStyles.getPropertyValue(cssVar[key]).trim();
+    });
+
+    alert("Your Changes Have Been Saved Noob...")
+    console.log("Saving Changes...")
+    localStorage.setItem(`${LOCALSTORAGEPREFIX}PRESET`, JSON.stringify(preset));
+}
+
+function setChatBackgroundImage() {
+    chrome.storage.local.get("chatBackgroundImage", (data) => {
+        if (!data.chatBackgroundImage) return;
+        document.documentElement.style.setProperty('--chat-bg-img', `url("${data.chatBackgroundImage}")`)
+    });
+}
+
+function setMainBackgroundImage() {
+    chrome.storage.local.get("mainBackgroundImage", (data) => {
+        if (!data.mainBackgroundImage) return;
+        document.documentElement.style.setProperty('--main-bg-img', `url("${data.mainBackgroundImage}")`)
+    });
 }

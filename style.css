@@ -15,15 +15,96 @@
     --msg-in-link: rgb(130, 196, 159);
     --msg-out-link: rgb(227, 148, 59);
 
-    --chat-background: peachpuff;
+    --main-bg-img: url('chrome-extension://__MSG_@@extension_id__/samurai.png');
+    --chat-bg-img: url('chrome-extension://__MSG_@@extension_id__/chat_bg.jpg');
     
+    --main-background-opacity: 0.6;
+    --main-background-overlay-color: rgb(27, 184, 22);
+    --main-background-overlay-opacity: 0.4;
+    
+    --chat-background-opacity: 0.6;
+    --chat-background-overlay-color: rgb(145, 56, 56);
+    --chat-background-overlay-opacity: 0.4;
+    --chat-background: peachpuff;
+
+    --app-border-radius: 20px;
+
 }
+
+/* ----------------------------------------------- */
+
+/*--App Border Radius--- */
+._aigs{
+    border-radius: var(--app-border-radius) !important;
+}
+
+/*---Background::Main---*/
+#app{
+    position: relative;
+}
+
+#app::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--main-bg-img) !important;
+    background-size: cover;
+    background-position: center;
+    opacity: var(--main-background-opacity) !important;
+}
+
+/* Main Background::Overlay */
+#app::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-background-overlay-color);
+    opacity: var(--main-background-overlay-opacity) !important;
+}
+
+/* Green Bar */
+._ap4q::after{
+    display: none !important;
+}
+
 
 /* ---------------------------------------------- */
 
 /* Chat Background */
 [data-asset-chat-background-dark]{
-    background-color: var(--chat-background) !important;
+    opacity: 1 !important;
+}
+
+/* Applying Chat Background */
+[data-asset-chat-background-dark]::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--chat-bg-img) !important;
+    background-size: cover;
+    background-position: center;
+    opacity: var(--chat-background-opacity) !important;
+}
+
+/* Chat Background::Overlay */
+[data-asset-chat-background-dark]::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--chat-background-overlay-color);
+    opacity: var(--chat-background-overlay-opacity) !important;
 }
 
 /* BARS: Chahiye Yaar And Some Bars:: 36 - Raftaar */
