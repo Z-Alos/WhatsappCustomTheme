@@ -88,6 +88,8 @@ function applyPreset(){
     });
 
     alert("Your Changes Have Been Saved Noob...")
+    const audio = new Audio(chrome.runtime.getURL("apply_sound_effect.mp3"));
+    audio.play();
     console.log("Saving Changes...")
     localStorage.setItem(`${LOCALSTORAGEPREFIX}PRESET`, JSON.stringify(preset));
 }

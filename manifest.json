@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Whatsapp Custom Theme",
     "description": "Whatsapp Custom Theme",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "permissions": ["scripting", "activeTab", "storage"],
     "host_permissions": ["https://web.whatsapp.com/*"],
   
@@ -26,7 +26,7 @@
     ],
     "web_accessible_resources": [
       {
-        "resources": ["chat_bg.jpg"],
+        "resources": ["chat_bg.jpg", "samurai.png", "apply_sound_effect.mp3"],
         "matches": ["*://web.whatsapp.com/*"]
       }
     ],
