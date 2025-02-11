@@ -15,6 +15,9 @@
     --msg-in-link: rgb(130, 196, 159);
     --msg-out-link: rgb(227, 148, 59);
 
+    --msg-out-rgb: 219, 192, 173;
+    --msg-in-rgb: 142, 107, 107;
+
     --main-bg-img: url('chrome-extension://__MSG_@@extension_id__/samurai.png');
     --chat-bg-img: url('chrome-extension://__MSG_@@extension_id__/chat_bg.jpg');
     
@@ -203,6 +206,16 @@
     background-color: var(--msg-out-inner);
 }
 
+/* Hover::Message */
+/* message-in */
+.message-in ._ahkm{
+    color: var(--msg-in-text);
+}
+/* message-out */
+.message-out ._ahkm{
+    color: var(--msg-out-text);
+}
+
 
 /*---Special Inner---*/
 
@@ -221,7 +234,7 @@
 
 /* Documents With Caption */
 /* message-in */
-.message-in ._amk6._amlo .x1c4vz4f.xs83m0k.xdl72j9.x1g77sc7{
+.message-in ._amk6._amlo .x1c4vz4f.xs83m0k.xdl72j9.x1g77sc7.x1oq7267{
     background-color: var(--msg-in-inner);
 }
 
@@ -235,6 +248,22 @@
 /* message-out */
 .message-out ._amk6._amlo .x6ikm8r.x10wlt62.xnhwuio.x1k6n2fr{
     background-color: var(--msg-out-inner);
+}
+
+/* Hover::Message */
+
+/* message-in */
+.x1ii9tc1 {
+    background: radial-gradient(at top right,
+    rgba(var(--msg-in-rgb),1) 60%,
+    rgba(var(--msg-in-rgb),0) 80%) !important;
+}
+
+/* message-out */
+.message-out ._amk6._amlo .x9fpu7x.x6ikm8r.x10wlt62.xa11xnq{
+    background: radial-gradient(circle at top right, 
+    rgba(var(--msg-out-rgb), 1) 40%, 
+    rgba(var(--msg-out-rgb), 0) 80%) !important;
 }
 
 
@@ -289,11 +318,11 @@
 
 /* Simple Message::Text*/
 /* message-in */
-.message-in .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
+.message-in .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4 *{
     color: var(--msg-in-text) !important;
 }
 /* message-out */
-.message-out .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4{
+.message-out .x9f619.x1hx0egp.x1yrsyyn.x1ct7el4 *{
     color: var(--msg-out-text) !important;
 }
 

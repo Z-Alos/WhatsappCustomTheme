@@ -77,21 +77,26 @@ function setTheme(retrievedPreset){
     Object.keys(cssVar).forEach(key => {
         target.setProperty(cssVar[key], retrievedPreset[key]);
     })
+
+    setDestructuredRgbVal('--msg-in', '--msg-in-rgb')
+    setDestructuredRgbVal('--msg-out', '--msg-out-rgb')
 }
 
 function applyPreset(){
     const preset = {};
     const rootStyles = getComputedStyle(document.documentElement);
-
+    
     Object.keys(cssVar).forEach(key => {
         preset[key] = rootStyles.getPropertyValue(cssVar[key]).trim();
     });
-
+    
     alert("Your Changes Have Been Saved Noob...")
     const audio = new Audio(chrome.runtime.getURL("apply_sound_effect.mp3"));
     audio.play();
     console.log("Saving Changes...")
     localStorage.setItem(`${LOCALSTORAGEPREFIX}PRESET`, JSON.stringify(preset));
+    setDestructuredRgbVal('--msg-in', '--msg-in-rgb')
+    setDestructuredRgbVal('--msg-out', '--msg-out-rgb')
 }
 
 function setChatBackgroundImage() {
@@ -106,4 +111,10 @@ function setMainBackgroundImage() {
         if (!data.mainBackgroundImage) return;
         document.documentElement.style.setProperty('--main-bg-img', `url("${data.mainBackgroundImage}")`)
     });
+}
+
+function setDestructuredRgbVal(inputElement, outputElement){
+    const rgbVal = getComputedStyle(document.documentElement).getPropertyValue(inputElement)
+    const [r, g, b] = rgbVal.match(/\d+/g).map(Number);
+    document.documentElement.style.setProperty(outputElement, `${r},${g},${b}`)
 }
